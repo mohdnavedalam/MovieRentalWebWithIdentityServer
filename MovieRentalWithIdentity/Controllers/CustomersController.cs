@@ -1,6 +1,7 @@
 ﻿using MovieRentalWithIdentity.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,23 +11,31 @@ namespace MovieRentalWithIdentity.Controllers
 {
     public class CustomersController : Controller
     {
-        // GET: Customers
+        private ApplicationDbContext _context;
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+        
         public ActionResult Index()
         {
-            var customers = GetCustomer();
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
             return View(customers);
         }
 
         public ActionResult Details(int id)
-        {
-            var customer = GetCustomer().SingleOrDefault(c => c.ID == id);
+        {            
+            var customer = _context.Customers.SingleOrDefault(c => c.ID == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
             return View(customer);
         }
-
-        private IEnumerable<Customer> GetCustomer() => new List<Customer>
-        { 
-            new Customer {ID = 1, Name = "Alam"},
-            new Customer{ ID = 2, Name = "Naved"} 
-        };
     }
 }

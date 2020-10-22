@@ -163,11 +163,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Data\App_Start\BundleConfig.cs" />
+    <Compile Include="App_Data\App_Start\FilterConfig.cs" />
+    <Compile Include="App_Data\App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Data\App_Start\RouteConfig.cs" />
+    <Compile Include="App_Data\App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -176,17 +176,55 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010171758007_InitialCreate.cs" />
+    <Compile Include="Migrations\202010171758007_InitialCreate.designer.cs">
+      <DependentUpon>202010171758007_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221425171_InitialModel.cs" />
+    <Compile Include="Migrations\202010221425171_InitialModel.designer.cs">
+      <DependentUpon>202010221425171_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221500254_AddColumnIsSubscribedToNewsLetterToTableCustomer.cs" />
+    <Compile Include="Migrations\202010221500254_AddColumnIsSubscribedToNewsLetterToTableCustomer.designer.cs">
+      <DependentUpon>202010221500254_AddColumnIsSubscribedToNewsLetterToTableCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221509266_AddMemberShipType.cs" />
+    <Compile Include="Migrations\202010221509266_AddMemberShipType.designer.cs">
+      <DependentUpon>202010221509266_AddMemberShipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221851314_PopulateTableMembershipTypes.cs" />
+    <Compile Include="Migrations\202010221851314_PopulateTableMembershipTypes.designer.cs">
+      <DependentUpon>202010221851314_PopulateTableMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221924236_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202010221924236_ApplyAnnotationsToCustomerName.designer.cs">
+      <DependentUpon>202010221924236_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010222016092_ApplyAnnotationsToCustomerMembershipTypeID.cs" />
+    <Compile Include="Migrations\202010222016092_ApplyAnnotationsToCustomerMembershipTypeID.designer.cs">
+      <DependentUpon>202010222016092_ApplyAnnotationsToCustomerMembershipTypeID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010222021102_SetNameOfMembershipTypes.cs" />
+    <Compile Include="Migrations\202010222021102_SetNameOfMembershipTypes.designer.cs">
+      <DependentUpon>202010222021102_SetNameOfMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-MovieRentalWithIdentity-20201017105507.mdf" />
+    <Content Include="App_Data\aspnet-MovieRentalWithIdentity-20201017105507_log.ldf">
+      <DependentUpon>aspnet-MovieRentalWithIdentity-20201017105507.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -249,9 +287,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -264,6 +300,32 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010171758007_InitialCreate.resx">
+      <DependentUpon>202010171758007_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221425171_InitialModel.resx">
+      <DependentUpon>202010221425171_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221500254_AddColumnIsSubscribedToNewsLetterToTableCustomer.resx">
+      <DependentUpon>202010221500254_AddColumnIsSubscribedToNewsLetterToTableCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221509266_AddMemberShipType.resx">
+      <DependentUpon>202010221509266_AddMemberShipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221851314_PopulateTableMembershipTypes.resx">
+      <DependentUpon>202010221851314_PopulateTableMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221924236_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202010221924236_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010222016092_ApplyAnnotationsToCustomerMembershipTypeID.resx">
+      <DependentUpon>202010222016092_ApplyAnnotationsToCustomerMembershipTypeID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010222021102_SetNameOfMembershipTypes.resx">
+      <DependentUpon>202010222021102_SetNameOfMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
