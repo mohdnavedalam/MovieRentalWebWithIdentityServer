@@ -212,11 +212,20 @@
     <Compile Include="Migrations\202010222043139_AddColumnDOBToTableCustomer.designer.cs">
       <DependentUpon>202010222043139_AddColumnDOBToTableCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010222114454_AddTableGenreModifyTableMovie.cs" />
+    <Compile Include="Migrations\202010222114454_AddTableGenreModifyTableMovie.designer.cs">
+      <DependentUpon>202010222114454_AddTableGenreModifyTableMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010222120500_PopulateTableGenres.cs" />
+    <Compile Include="Migrations\202010222120500_PopulateTableGenres.designer.cs">
+      <DependentUpon>202010222120500_PopulateTableGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -290,6 +299,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -332,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010222043139_AddColumnDOBToTableCustomer.resx">
       <DependentUpon>202010222043139_AddColumnDOBToTableCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010222114454_AddTableGenreModifyTableMovie.resx">
+      <DependentUpon>202010222114454_AddTableGenreModifyTableMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010222120500_PopulateTableGenres.resx">
+      <DependentUpon>202010222120500_PopulateTableGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
