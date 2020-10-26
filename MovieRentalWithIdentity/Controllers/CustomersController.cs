@@ -21,6 +21,11 @@ namespace MovieRentalWithIdentity.Controllers
         {
             _context.Dispose();
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
         
         public ActionResult Index()
         {
