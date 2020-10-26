@@ -23,14 +23,14 @@ namespace MovieRentalWithIdentity.Controllers
             _context.Dispose();
         }
 
-        public ActionResult New()
+        public ActionResult CustomerForm()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             { 
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
@@ -48,6 +48,22 @@ namespace MovieRentalWithIdentity.Controllers
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
             return View(customers);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.ID == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
         }
 
         public ActionResult Details(int id)
