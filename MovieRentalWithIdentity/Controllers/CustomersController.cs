@@ -1,4 +1,5 @@
 ﻿using MovieRentalWithIdentity.Models;
+using MovieRentalWithIdentity.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,7 +25,12 @@ namespace MovieRentalWithIdentity.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            { 
+                MembershipTypes = membershipTypes
+            };
+            return View(viewModel);
         }
         
         public ActionResult Index()
