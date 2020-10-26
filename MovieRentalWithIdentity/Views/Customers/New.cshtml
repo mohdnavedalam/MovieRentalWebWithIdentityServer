@@ -25,4 +25,5 @@
         @Html.LabelFor(m => m.Customer.MembershipTypeID)
         @Html.DropDownListFor(m => m.Customer.MembershipTypeID, new SelectList(Model.MembershipTypes, "ID", "Name"), "Select Memebership Type", new { @class = "form-control" })
     </div>
+    <button type="submit" class="btn btn-primary">Save</button>
 }
