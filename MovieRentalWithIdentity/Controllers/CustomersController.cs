@@ -40,6 +40,8 @@ namespace MovieRentalWithIdentity.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
+
+            // Model Binding --- STUDY
         }
         
         public ActionResult Index()
