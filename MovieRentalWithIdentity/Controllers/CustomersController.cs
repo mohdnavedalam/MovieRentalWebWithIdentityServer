@@ -28,6 +28,7 @@ namespace MovieRentalWithIdentity.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             { 
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm", viewModel);
@@ -36,11 +37,11 @@ namespace MovieRentalWithIdentity.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
-            if (!ModelState.IsValid) // New Customer can't be added because of this property.
+            if (!ModelState.IsValid) // New Customer can't be added because of this property. // Issue Resolved ***
             {
                 var viewModel = new CustomerFormViewModel
                 {
-                    Customer = customer,
+                    Customer = customer, // ***
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", viewModel);
