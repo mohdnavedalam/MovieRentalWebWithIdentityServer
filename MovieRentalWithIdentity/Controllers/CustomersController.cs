@@ -35,6 +35,7 @@ namespace MovieRentalWithIdentity.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid) // New Customer can't be added because of this property. // Issue Resolved ***
