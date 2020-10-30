@@ -36,7 +36,7 @@ namespace MovieRentalWithIdentity.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) // New Customer can't be added because of this property.
             {
                 var viewModel = new CustomerFormViewModel
                 {

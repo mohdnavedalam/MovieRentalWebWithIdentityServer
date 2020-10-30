@@ -11,7 +11,7 @@ namespace MovieRentalWithIdentity.Models
     {
         public int ID { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Please enter Customer's Name")]
         [StringLength(255)]
         public string Name { get; set; }
         
