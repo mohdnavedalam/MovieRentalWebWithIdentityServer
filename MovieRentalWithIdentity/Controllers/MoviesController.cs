@@ -27,7 +27,7 @@ namespace MovieRentalWithIdentity.Controllers
 
         public ViewResult New()
         {
-            var genres = _context.Genres.AsEnumerable();
+            var genres = _context.Genres.ToList();
             var viewModel = new MovieFormViewModel
             {
                 Genres = genres
@@ -42,9 +42,8 @@ namespace MovieRentalWithIdentity.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel
-            {
-                Movie = movie,
+            var viewModel = new MovieFormViewModel(movie)
+            {                
                 Genres = _context.Genres.ToList()
             };
 
@@ -52,9 +51,19 @@ namespace MovieRentalWithIdentity.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            if(movie.ID == 0)
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel(movie)
+                {                    
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MovieForm", viewModel);
+            }
+
+            if (movie.ID == 0)
             {
                 movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);

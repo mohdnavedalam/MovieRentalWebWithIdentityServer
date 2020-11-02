@@ -16,17 +16,20 @@ namespace MovieRentalWithIdentity.Models
         public string Name { get; set; }
         
         public Genre Genre { get; set; }
-
-        [Display(Name = "Genre")]
+        
+        [Display(Name = "Genre")]  
         [Required]
         public int GenreID { get; set; }
 
         public DateTime DateAdded { get; set; }
-        
-        [Display(Name = "Release Date")]
+
+        [Required]
+        [Display(Name = "Release Date")]        
         public DateTime ReleaseDate { get; set; }
         
-        [Display(Name = "Number in Stock")]        
+        [Display(Name = "Number in Stock")]
+        [Required]
+        [Range(1, 20)]
         public byte NumberInStock { get; set; }
         
         public byte NumberAvailable { get; set; }
