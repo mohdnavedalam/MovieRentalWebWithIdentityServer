@@ -17,7 +17,7 @@ namespace MovieRentalWithIdentity.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        // GET /api/customers
+        // GET /api/customers        
         public IEnumerable<Customer> GetCustomers()
         {
             return _context.Customers.ToList();
