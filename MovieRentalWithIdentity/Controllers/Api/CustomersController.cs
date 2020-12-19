@@ -26,22 +26,22 @@ namespace MovieRentalWithIdentity.Controllers.Api
         }
 
         // Get api/customers/1
-        public CustomerDtos GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.ID == id);
 
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
-            return Mapper.Map<Customer, CustomerDtos>(customer);
+            return Ok(Mapper.Map<Customer, CustomerDtos>(customer));
         }
 
         // POST /api/customers
         [HttpPost]
-        public CustomerDtos CreateCustomer(CustomerDtos customerDtos)
+        public IHttpActionResult CreateCustomer(CustomerDtos customerDtos)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             var customer = Mapper.Map<CustomerDtos, Customer>(customerDtos);
             _context.Customers.Add(customer);
@@ -49,7 +49,7 @@ namespace MovieRentalWithIdentity.Controllers.Api
 
             customerDtos.ID = customer.ID;
 
-            return customerDtos;
+            return Created(new Uri(Request.RequestUri + "/" + customer.ID), customerDtos);
         }
 
         // PUT /api/customers/1

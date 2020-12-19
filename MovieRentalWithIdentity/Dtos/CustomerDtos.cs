@@ -18,8 +18,9 @@ namespace MovieRentalWithIdentity.Dtos
         public bool IsSubscribedToNewsLetter { get; set; }
 
         public byte MembershipTypeID { get; set; }
-                
-        [Min18YearsIfAMember]
+        
+        //[Display(Name = "Birthdate")]
+        //[Min18YearsIfAMember]
         public DateTime? DateOfBirth { get; set; }
     }
 }
