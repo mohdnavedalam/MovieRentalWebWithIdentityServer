@@ -12,8 +12,15 @@ namespace MovieRentalWithIdentity.App_Start
     {
         public MappingProfile()
         {
-            Mapper.CreateMap<Customer, CustomerDtos>();
-            Mapper.CreateMap<CustomerDtos, Customer>();
+            // Domain to Dto
+            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<Movie, MovieDto>();
+
+            // Dto to Domain
+            Mapper.CreateMap<CustomerDto, Customer>().ForMember(c => c.ID, opt => opt.Ignore());
+            Mapper.CreateMap<MovieDto, Movie>().ForMember(c => c.ID, opt => opt.Ignore());
+
+
         }
     }
 }
