@@ -1,3 +1,18 @@
 POCO - Plain Old CLR Object
 	It represents the state and behaviour of an application in terms of its problem domain.
 
+
+// Below code is for overriding the native js dialog box. But it is not working since there is a compatibility issue since the versions of js and bootstrap files
+                // are different -------
+                //bootbox.confirm("Are you sure you want to delete this customer?", function (result) {
+                //    if (result) {
+                //        $.ajax({
+                //            url: "/api/customers/" + button.attr("data-customer-id"),
+                //            method: "DELETE",
+                //            success: function () {
+                //                button.parents("tr").remove();
+                //            }
+                //        });
+                //    }
+                //});               
+
