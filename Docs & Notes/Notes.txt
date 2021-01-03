@@ -14,5 +14,8 @@ POCO - Plain Old CLR Object
                 //            }
                 //        });
                 //    }
-                //});               
+                //});         
+      
+
+//$("#customers").on("click", ".js-delete", function () {
 
