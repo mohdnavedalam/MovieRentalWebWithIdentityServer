@@ -123,6 +123,7 @@ namespace MovieRentalWithIdentity.Controllers
         //    return Content("ID = " + ID);
         //}
 
+        // Attribute Routing
         [Route("movie/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
