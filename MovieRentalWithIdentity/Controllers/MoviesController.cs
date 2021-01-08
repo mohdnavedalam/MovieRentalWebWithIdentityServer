@@ -25,7 +25,7 @@ namespace MovieRentalWithIdentity.Controllers
             _context.Dispose();
         }
 
-        [Authorize(Roles = "CanManageMovies")]
+        [Authorize(Roles = RoleNames.CanManageMovies)]
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();
@@ -85,7 +85,7 @@ namespace MovieRentalWithIdentity.Controllers
 
         public ViewResult Index()
         {
-            if (User.IsInRole("CanManageMovies"))
+            if (User.IsInRole(RoleNames.CanManageMovies))
                 return View("List");            
             
             return View("ReadOnlyList");

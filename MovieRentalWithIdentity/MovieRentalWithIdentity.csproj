@@ -243,6 +243,10 @@
     <Compile Include="Migrations\202101081810234_SeedUsers.designer.cs">
       <DependentUpon>202101081810234_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101081905169_AddDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\202101081905169_AddDrivingLicenseToApplicationUser.designer.cs">
+      <DependentUpon>202101081905169_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -253,6 +257,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -620,6 +625,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101081810234_SeedUsers.resx">
       <DependentUpon>202101081810234_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101081905169_AddDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>202101081905169_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

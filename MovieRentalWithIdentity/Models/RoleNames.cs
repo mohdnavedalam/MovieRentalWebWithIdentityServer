@@ -5,7 +5,8 @@ using System.Web;
 
 namespace MovieRentalWithIdentity.Models
 {
-    public class RoleNames
+    public static class RoleNames
     {
+        public const string CanManageMovies = "CanManageMovies";
     }
 }
