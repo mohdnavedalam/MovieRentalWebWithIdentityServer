@@ -70,8 +70,9 @@ namespace MovieRentalWithIdentity.Controllers
         }
         
         public ActionResult Index()
-        {            
-            return View();
+        {
+            var customers = _context.Customers.ToList();
+            return View(customers);
         }
 
         public ActionResult Edit(int id)
