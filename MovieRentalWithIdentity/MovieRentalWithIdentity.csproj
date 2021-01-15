@@ -270,6 +270,10 @@
     <Compile Include="Migrations\202101091033467_AddPhoneToApplicationUser.designer.cs">
       <DependentUpon>202101091033467_AddPhoneToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101151829020_AddTableRental.cs" />
+    <Compile Include="Migrations\202101151829020_AddTableRental.designer.cs">
+      <DependentUpon>202101151829020_AddTableRental.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -285,6 +289,7 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RoleNames.cs" />
     <Compile Include="Models\SendCodeViewModel.cs" />
@@ -662,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101091033467_AddPhoneToApplicationUser.resx">
       <DependentUpon>202101091033467_AddPhoneToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101151829020_AddTableRental.resx">
+      <DependentUpon>202101151829020_AddTableRental.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
