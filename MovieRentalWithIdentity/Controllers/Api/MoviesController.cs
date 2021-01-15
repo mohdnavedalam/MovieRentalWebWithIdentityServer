@@ -29,7 +29,7 @@ namespace MovieRentalWithIdentity.Controllers.Api
             
             return moviesQuery.ToList().Select(Mapper.Map<Movie, MovieDto>);
         }
-
+        
         // GET /api/movies/1
         public IHttpActionResult GetMovie(int id)
         {
