@@ -274,6 +274,10 @@
     <Compile Include="Migrations\202101151829020_AddTableRental.designer.cs">
       <DependentUpon>202101151829020_AddTableRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101151851201_TableMoviesInitiateNumbersAvailable.cs" />
+    <Compile Include="Migrations\202101151851201_TableMoviesInitiateNumbersAvailable.designer.cs">
+      <DependentUpon>202101151851201_TableMoviesInitiateNumbersAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -670,6 +674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101151829020_AddTableRental.resx">
       <DependentUpon>202101151829020_AddTableRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101151851201_TableMoviesInitiateNumbersAvailable.resx">
+      <DependentUpon>202101151851201_TableMoviesInitiateNumbersAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
