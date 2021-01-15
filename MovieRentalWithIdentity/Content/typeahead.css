@@ -142,6 +142,10 @@ p + p {
         margin: 0;
     }
 
+    .tt-container{
+        position: relative;
+    }
+
 .gist {
     font-size: 14px;
 }
