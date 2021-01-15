@@ -34,3 +34,13 @@ textarea {
 .validation-summary-errors{
     color: red;
 }
+
+field-validation-error,
+label.error{
+    color: red;
+}
+
+input-validation-error,
+input.error{
+    boeder: 2px solid red;
+}

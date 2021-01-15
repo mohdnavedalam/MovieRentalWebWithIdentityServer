@@ -22,7 +22,7 @@ namespace MovieRentalWithIdentity.Controllers.Api
         // GET /api/movies
         public IEnumerable<MovieDto> GetMovies(string query = null)
         {
-            var moviesQuery = _context.Movies.Include("Genre").Where(m => m.NumberAvailable > 0);
+            var moviesQuery = _context.Movies.Include("Genre").Where(m => m.NumberAvailable > 0); // Check 
 
             if (!String.IsNullOrWhiteSpace(query))
                 moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
